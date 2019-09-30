@@ -61,7 +61,7 @@ There weren't any major blockers. We finished the project ahead of our expected 
 
 ## Featured Code 
 
-<h2>Featured piece of code no.1</h2>
+### Featured piece of code no.1
 
 ```
 const Comment = ({user, createdAt, content, handledelete, _id,    userRating}) => {
@@ -98,7 +98,7 @@ export default Comment
 ```
 This piece of code allows the user to create a comment as well as a user rating for the burger they are commenting on. This user rating is then added to a global rating.
 
-<h2>Featured piece of code no.2</h2>
+### Featured piece of code no.2
 
 ```
     const activeClass = (route) => {
