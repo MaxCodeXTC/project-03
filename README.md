@@ -40,7 +40,7 @@ Please register for the full experience.
 * Mongoose
 * Mapbox API
 
-### Approach Taken
+## Approach Taken
 
 First we set up GitHub for the project and assigned a GitHub Master. This was the first time I worked in a group this big so understanding the development branch and the master branch was important to us as a group. We did the first few merges as a team.
 
@@ -59,9 +59,56 @@ We worked together as a team very well. There was no friction or arguments on th
 ### Blockers
 There weren't any major blockers. We finished the project ahead of our expected time and even managed to start on some 'nice to have' features. This included adding the Beer Matcher API to go with your burger. 
 
-### Visuals
+## Featured Code 
 
-<h2>Features piece of code no.1</h2>
+<h2>Featured piece of code no.1</h2>
+
+```
+const Comment = ({user, createdAt, content, handledelete, _id,    userRating}) => {
+  return (
+    <article className="media">
+      <div className="media-content">
+        <div className="content">
+          <p>
+            <strong>{user.username}</strong>
+            {' '}
+            <small>{(new Date(createdAt)).toLocaleDateString()}</small>
+            <hr className="linebreaker"/>
+            {content}
+          </p>
+          <span className="title is-2 has-text-centered">
+            <Rating
+              emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-24x24"/>}
+              fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-24x24"/>}
+              fractions={2}
+              initialRating={userRating}
+              readonly
+            />
+          </span>
+        </div>
+      </div>
+      {Auth.isCurrentUser(user) && <div className="media-right">
+        <button id={_id} onClick={handledelete} className="delete"></button>
+      </div>}
+    </article>
+  )
+}
+
+export default Comment
+```
+This piece of code allows the user to create a comment as well as a user rating for the burger they are commenting on. This user rating is then added to a global rating.
+
+<h2>Featured piece of code no.2</h2>
+
+```
+    const activeClass = (route) => {
+      return this.props.location.pathname === route ? 'is-active' : null
+    }
+    
+```
+This piece of code allows us to change a tab to not be active if the pathname of the page we are on is not the same.
+
+## Visuals
 
 
 ![Imgur](https://i.imgur.com/FoYsEv9.png)
